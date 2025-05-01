@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soletto Studio & Coffee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(248, 245, 242, 0.7), rgba(248, 245, 242, 0.7)), url('https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-item:hover .menu-overlay {
+            opacity: 1;
+        }
+        
+        .menu-overlay {
+            transition: opacity 0.3s ease;
+            background-color: rgba(248, 245, 242, 0.85);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #333;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .qr-code {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-beige-50 bg-opacity-90 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+                        <svg viewBox="0 0 100 100" class="w-10 h-10">
+                            <path d="M30,20 Q50,5 70,20 Q80,40 65,60 Q50,75 35,60 Q20,40 30,20 Z" fill="none" stroke="#333" stroke-width="2"/>
+                            <circle cx="40" cy="35" r="3" fill="#333"/>
+                            <circle cx="60" cy="35" r="3" fill="#333"/>
+                            <path d="M45,50 Q50,55 55,50" fill="none" stroke="#333" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h1 class="ml-3 text-xl font-serif font-bold">Soletto Studio & Coffee</h1>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-800 hover:text-gray-900">Home</a>
+                    <a href="#art" class="nav-link text-gray-800 hover:text-gray-900">Tattoo Art</a>
+                    <a href="#supplies" class="nav-link text-gray-800 hover:text-gray-900">Supplies</a>
+                    <a href="#coffee" class="nav-link text-gray-800 hover:text-gray-900">Coffee</a>
+                    <a href="#events" class="nav-link text-gray-800 hover:text-gray-900">Events</a>
+                    <a href="#contact" class="nav-link text-gray-800 hover:text-gray-900">Contact</a>
+                </nav>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-gray-900">Home</a>
+                <a href="#art" class="block py-2 text-gray-800 hover:text-gray-900">Tattoo Art</a>
+                <a href="#supplies" class="block py-2 text-gray-800 hover:text-gray-900">Supplies</a>
+                <a href="#coffee" class="block py-2 text-gray-800 hover:text-gray-900">Coffee</a>
+                <a href="#events" class="block py-2 text-gray-800 hover:text-gray-900">Events</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-gray-900">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Where Art Meets <span class="italic">Dolce Vita</span></h1>
+                <p class="text-lg md:text-xl mb-8">A curated space blending Mexican tattoo artistry with Italian coffee culture in the heart of the city.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#art" class="px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition duration-300">Explore Art</a>
+                    <a href="#coffee" class="px-8 py-3 bg-white text-black border border-black rounded-full hover:bg-gray-100 transition duration-300">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tattoo Art Section -->
+    <section id="art" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Tattoo Artistry</h2>
+                <div class="w-24 h-1 bg-black mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-700">Our artists blend traditional Mexican motifs with contemporary styles to create unique, meaningful tattoos.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Artist 1 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1605649487212-47bd49706496?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artist working" class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center text-white p-6">
+                            <h3 class="text-2xl font-serif mb-2">Alejandro</h3>
+                            <p class="mb-4">Specializing in blackwork and Mexican folk art</p>
+                            <a href="#" class="inline-block px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">View Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artist 2 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1622397333309-3056849bc70b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Artist working" class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center text-white p-6">
+                            <h3 class="text-2xl font-serif mb-2">Sofia</h3>
+                            <p class="mb-4">Fine line and botanical tattoo specialist</p>
+                            <a href="#" class="inline-block px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">View Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artist 3 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1571079570759-7b1d0b4b7993?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Artist working" class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center text-white p-6">
+                            <h3 class="text-2xl font-serif mb-2">Marco</h3>
+                            <p class="mb-4">Neo-traditional and Italian-inspired designs</p>
+                            <a href="#" class="inline-block px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">View Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition duration-300">Book a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Art Supplies Section -->
+    <section id="supplies" class="py-20 bg-beige-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Curated Art Supplies</h2>
+                <div class="w-24 h-1 bg-black mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-700">Premium quality supplies selected by our artists for professionals and enthusiasts alike.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Tattoo machine" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+                            <i class="fas fa-qrcode text-gray-700"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-serif mb-2">Precision Tattoo Machine</h3>
+                        <p class="text-gray-600 mb-4">Professional rotary machine with adjustable stroke</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$249.99</span>
+                            <button class="px-4 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Ink set" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+                            <i class="fas fa-qrcode text-gray-700"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-serif mb-2">Vibrant Ink Collection</h3>
+                        <p class="text-gray-600 mb-4">Set of 12 high-pigment tattoo inks</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$89.99</span>
+                            <button class="px-4 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1625772452859-1c0305a13572?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sketchbook" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+                            <i class="fas fa-qrcode text-gray-700"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-serif mb-2">Italian Leather Sketchbook</h3>
+                        <p class="text-gray-600 mb-4">Handmade in Florence with premium paper</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$45.00</span>
+                            <button class="px-4 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1579762715459-5a068c289a29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Brush set" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+                            <i class="fas fa-qrcode text-gray-700"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-serif mb-2">Artist Brush Set</h3>
+                        <p class="text-gray-600 mb-4">8 premium sable hair brushes for fine detail</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$65.00</span>
+                            <button class="px-4 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800 transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div class="inline-block p-6 bg-white rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="mb-4 md:mb-0 md:mr-6">
+                            <div class="qr-code bg-white p-3 rounded-lg inline-block">
+                                <i class="fas fa-qrcode text-6xl"></i>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-xl font-serif mb-2">Scan to Shop</h3>
+                            <p class="text-gray-600 mb-4">Use your phone to scan this QR code and browse our full inventory on your mobile device.</p>
+                            <p class="text-sm text-gray-500">Available for in-store pickup or local delivery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Menu Section -->
+    <section id="coffee" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Coffee & Dolci</h2>
+                <div class="w-24 h-1 bg-black mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-700">Authentic Italian coffee paired with Mexican-inspired pastries in our cozy studio space.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Coffee Column -->
+                <div>
+                    <h3 class="text-2xl font-serif mb-6 pb-2 border-b border-gray-200">Coffee</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Item 1 -->
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="text-lg font-medium">Espresso Italiano</h4>
+                                <span class="font-serif">$3.50</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">Single origin beans from Sicily</p>
+                            <div class="menu-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                                <button class="px-4 py-2 bg-black text-white rounded-full text-sm">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="text-lg font-medium">Café de Olla</h4>
+                                <span class="font-serif">$4.00</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">Traditional Mexican spiced coffee</p>
+                            <div class="menu-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                                <button class="px-4 py-2 bg-black text-white rounded-full text-sm">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="text-lg font-medium">Cappuccino</h4>
+                                <span class="font-serif">$4.50</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">With house-made vanilla syrup</p>
+                            <div class="menu-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                                <button class="px-4 py-2 bg-black text-white rounded-full text-sm">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="text-lg font-medium">Cold Brew</h4>
+                                <span class="font-serif">$4.75</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">Slow-steeped for 18 hours</p>
+                            <div class="menu-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                                <button class="px-4 py-2 bg-black text-white rounded-full text-sm">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pastries Column -->
+                <div>
+                    <h3 class="text-2xl font-serif mb-6 pb-2 border-b border-gray-200">Pastries</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Item 1 -->
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="text-lg font-medium">Concha</h4>
+                                <span class="font-serif">$3.25</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">Traditional Mexican sweet bread</p>
+                            <div class="menu-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                                <button class="px-4 py-2 bg-black text-white rounded-full text-sm">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="text-lg font-medium">Cannoli Siciliani</h4>
+                                <span class="font-serif">$4.50</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">Crisp shell with ricotta filling</p>
+                            <div class="menu-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                                <button class="px-4 py-2 bg-black text-white rounded-full text-sm">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="text-lg font-medium">Tres Leches Cake</h4>
+                                <span class="font-serif">$5.00</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">With seasonal fruit topping</p>
+                            <div class="menu-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                                <button class="px-4 py-2 bg-black text-white rounded-full text-sm">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="menu-item relative group">
+                            <div class="flex justify-between">
+                                <h4 class="text-lg font-medium">Tiramisu</h4>
+                                <span class="font-serif">$5.50</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">Classic Italian dessert</p>
+                            <div class="menu-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                                <button class="px-4 py-2 bg-black text-white rounded-full text-sm">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <div class="inline-block max-w-2xl mx-auto bg-beige-50 p-8 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-serif mb-4">Digital Ordering</h3>
+                    <p class="mb-6">Skip the line and order ahead through our mobile app or website. Your coffee will be ready when you arrive.</p>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                        <button class="px-6 py-3 bg-black text-white rounded-full flex items-center justify-center">
+                            <i class="fab fa-apple mr-2"></i>
+                            <span>App Store</span>
+                        </button>
+                        <button class="px-6 py-3 bg-black text-white rounded-full flex items-center justify-center">
+                            <i class="fab fa-google-play mr-2"></i>
+                            <span>Google Play</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-beige-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Studio Events</h2>
+                <div class="w-24 h-1 bg-black mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-700">Join us for art exhibitions, live tattooing demonstrations, and cultural celebrations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Event 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" alt="Art exhibition" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-serif">Mexican Folk Art Showcase</h3>
+                            <span class="bg-black text-white text-xs px-2 py-1 rounded-full">June 15</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Local artists display contemporary interpretations of traditional Mexican folk art.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">6:00 PM - 9:00 PM</span>
+                            <button class="px-4 py-2 bg-black text-white rounded-full text-xs hover:bg-gray-800 transition duration-300">RSVP</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2054&q=80" alt="Tattoo demonstration" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-serif">Live Tattoo Demonstration</h3>
+                            <span class="bg-black text-white text-xs px-2 py-1 rounded-full">July 2</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Watch our artists create custom pieces and learn about tattoo techniques.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">2:00 PM - 5:00 PM</span>
+                            <button class="px-4 py-2 bg-black text-white rounded-full text-xs hover:bg-gray-800 transition duration-300">RSVP</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1517451330947-7819f1cf209f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Coffee tasting" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-serif">Italian Coffee Tasting</h3>
+                            <span class="bg-black text-white text-xs px-2 py-1 rounded-full">July 20</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Sample single-origin Italian coffees paired with traditional biscotti.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">11:00 AM - 1:00 PM</span>
+                            <button class="px-4 py-2 bg-black text-white rounded-full text-xs hover:bg-gray-800 transition duration-300">RSVP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition duration-300">View Full Calendar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Visit Us</h2>
+                    <div class="w-24 h-1 bg-black mx-auto mb-6"></div>
+                    <p class="max-w-2xl mx-auto text-gray-700">We're located in the heart of the arts district, blending creative energy with tranquil vibes.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <div class="mb-8">
+                            <h3 class="text-xl font-serif mb-4">Hours</h3>
+                            <ul class="space-y-2">
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Monday - Thursday</span>
+                                    <span>8:00 AM - 8:00 PM</span>
+                                </li>
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Friday</span>
+                                    <span>8:00 AM - 10:00 PM</span>
+                                </li>
+                                <li class="flex justify-between border-b border-gray-100 pb-2">
+                                    <span>Saturday</span>
+                                    <span>9:00 AM - 10:00 PM</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Sunday</span>
+                                    <span>10:00 AM - 6:00 PM</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-serif mb-4">Contact</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-3 text-gray-600"></i>
+                                    <span>123 Artisan Lane, Arts District</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-phone-alt mr-3 text-gray-600"></i>
+                                    <span>(555) 123-4567</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-envelope mr-3 text-gray-600"></i>
+                                    <span>hello@solettostudio.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="h-full bg-gray-100 rounded-lg overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215579018291!2d-73.9878449241641!3d40.7484409713888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1687899610003!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                            <svg viewBox="0 0 100 100" class="w-8 h-8">
+                                <path d="M30,20 Q50,5 70,20 Q80,40 65,60 Q50,75 35,60 Q20,40 30,20 Z" fill="none" stroke="white" stroke-width="2"/>
+                                <circle cx="40" cy="35" r="3" fill="white"/>
+                                <circle cx="60" cy="35" r="3" fill="white"/>
+                                <path d="M45,50 Q50,55 55,50" fill="none" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="ml-3 text-xl font-serif">Soletto</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">Where art meets dolce vita since 2015.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#art" class="text-gray-400 hover:text-white transition duration-300">Tattoo Art</a></li>
+                        <li><a href="#supplies" class="text-gray-400 hover:text-white transition duration-300">Supplies</a></li>
+                        <li><a href="#coffee" class="text-gray-400 hover:text-white transition duration-300">Coffee</a></li>
+                        <li><a href="#events" class="text-gray-400 hover:text-white transition duration-300">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif text-lg mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-pinterest-p text-xl"></i></a>
+                    </div>
+                    <p class="text-gray-400 text-sm">Subscribe to our newsletter for updates and special offers.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif text-lg mb-4">Newsletter</h4>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your email" class="w-full px-4 py-2 bg-gray-800 text-white rounded-full focus:outline-none focus:ring-2 focus:ring-white">
+                        <button type="submit" class="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-200 transition duration-300">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 Soletto Studio & Coffee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu toggle script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=marcoshdzg/soletto-studio" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
